@@ -17,11 +17,7 @@ endif
 endif
 
 libworkrave_common_la_SOURCES =  \
-			debug.cc \
-			GlibThread.cc \
-			StringUtil.cc \
-			${dbussources} \
-			${localesources}
+			${dbussources}
 
 
 

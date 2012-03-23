@@ -5,8 +5,6 @@
 
 MAINTAINERCLEANFILES = 	Makefile.in
 
-SUBDIRS = 		win32
-
 noinst_LTLIBRARIES = 	libworkrave-common.la
 
 dbussources =
@@ -20,10 +18,6 @@ dbussources += 		DBus-freedesktop.cc \
 endif
 endif
 
-if HAVE_LANGUAGE_SELECTION
-localesources = 	Locale.cc
-endif
-
 libworkrave_common_la_SOURCES =  \
 			debug.cc \
 			GlibThread.cc \
@@ -35,9 +29,6 @@ libworkrave_common_la_SOURCES =  \
 
 ##			glibnls.c \
 
-if PLATFORM_OS_WIN32
-ldadd_platform = 	win32/libworkrave-common-win32.la
-endif
 
 libworkrave_common_la_LIBADD = ${ldadd_platform}
 
@@ -48,7 +39,3 @@ AM_CPPFLAGS = 		-W -DWORKRAVE_PKGDATADIR="\"${pkgdatadir}\"" -DWORKRAVE_DATADIR=
 
 EXTRA_DIST = 		$(wildcard $(srcdir)/*.hh) $(wildcard $(srcdir)/*.h) $(wildcard $(srcdir)/*.icc) locale.inc
 
-Locale.cc:		locale.inc
-
-locale.inc:
-			$(PYTHON) $(top_srcdir)/common/bin/create_locale.py > locale.inc

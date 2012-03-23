@@ -233,9 +233,7 @@ then
    variant="$variant x11 unix"
 fi
 
-WR_BACKEND_INCLUDES="-I\$(top_srcdir)/backend/include"
-WR_COMMON_INCLUDES="-I\$(top_srcdir)/common/include"
-WR_FRONTEND_COMMON_INCLUDES="-I\$(top_srcdir)/frontend/common/include"
+WR_COMMON_INCLUDES="-I\$(top_srcdir)/include"
 
 WR_LDADD="-ldbus_gdk-backend -ldbus_gdk-frontend-common -ldbus_gdk-common"
 WR_LDFLAGS="-L\$(top_builddir)/common/src/ -L\$(top_builddir)/backend/src/ -L\$(top_builddir)/frontend/common/src"
@@ -256,7 +254,6 @@ dnl
 AC_CONFIG_FILES([Makefile
 				 bin/Makefile
                  include/Makefile
-                 m4/Makefile
                  src/Makefile
 ])
 

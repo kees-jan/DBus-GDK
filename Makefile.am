@@ -5,4 +5,4 @@
 ACLOCAL_AMFLAGS=-I m4
 MAINTAINERCLEANFILES = 	Makefile.in
 
-SUBDIRS = 		m4 bin include src 
+SUBDIRS = 		bin include src 
